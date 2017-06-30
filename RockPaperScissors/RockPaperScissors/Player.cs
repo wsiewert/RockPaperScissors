@@ -36,7 +36,9 @@ namespace RockPaperScissors
             {
                 return userInput;
             }
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("--NOT A COMMAND!--");
+            Console.ResetColor();
             return GetPlayerChoice();
         }
     }

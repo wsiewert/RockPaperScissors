@@ -32,7 +32,6 @@ namespace RockPaperScissors
             string player1Choice = player1.GetPlayerChoice();
             Console.WriteLine(player2.name + " Choose your hand:");
             string player2Choice = player2.GetPlayerChoice();
-
             CompareHands(player1Choice,player2Choice);
         }
 

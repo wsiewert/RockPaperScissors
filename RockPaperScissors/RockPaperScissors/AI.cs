@@ -8,8 +8,7 @@ namespace RockPaperScissors
 {
     class AI : Player
     {
-        List<string> computerNames = new List<string>() {"Online", "Offline", "Terminator", "Gerald", "ORIGIN MASTER", "You Will Lose", "Loading..."};
-        string computerName = "GENERIC COMPUTER NAME";
+        List<string> computerNames = new List<string>() {"Online", "Offline", "Terminator", "Gerald", "ORIGIN MASTER", "You Will Lose", "Loading...", "Computer"};
 
         public AI()
         {
@@ -18,23 +17,25 @@ namespace RockPaperScissors
 
         public override void GetPlayerName()
         {
-            name = computerName;
+            name = GetRandomIndex(computerNames);
             Console.WriteLine(name);
         }
 
         public override string GetPlayerChoice()
         {
-            string choice = choices[GetRandomChoice()];
+            string choice = GetRandomIndex(choices);
             Console.WriteLine(choice);
             return choice;
         }
 
-        public int GetRandomChoice()
+        public string GetRandomIndex(List<string> list)
         {
             int randomIndex;
+            string result;
             Random randomNumber = new Random();
-            randomIndex = randomNumber.Next(0,4);
-            return randomIndex;
+            randomIndex = randomNumber.Next(0, (list.Count - 1));
+            result = list[randomIndex];
+            return result;
         }
     }
 }

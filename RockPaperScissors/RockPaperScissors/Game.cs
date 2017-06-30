@@ -28,6 +28,7 @@ namespace RockPaperScissors
 
         public void PlayRound()
         {
+            Console.WriteLine("========================================================");
             Console.WriteLine(player1.name + " Choose your hand:");
             string player1Choice = player1.GetPlayerChoice();
             Console.WriteLine(player2.name + " Choose your hand:");
@@ -89,7 +90,10 @@ namespace RockPaperScissors
 
         public void DisplayWinner(string winner)
         {
+            Console.WriteLine("========================================================");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(winner + " WINS THE GAME!");
+            Console.ResetColor();
             AskPlayAgain();
         }
 
@@ -116,7 +120,15 @@ namespace RockPaperScissors
             Console.WriteLine("'1' - Human vs AI");
             Console.WriteLine("'2' - Human vs Human");
             string userInput = Console.ReadLine();
-            return userInput;
+
+            if (userInput == "1" || userInput == "2")
+            {
+                return userInput;
+            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("--NOT A COMMAND--");
+            Console.ResetColor();
+            return GetGameType();
         }
 
         public void GetPlayerType(string gameType)

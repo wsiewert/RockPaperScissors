@@ -28,10 +28,7 @@ namespace RockPaperScissors
 
         public void PlayRound()
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("========================================================");
-            Console.ResetColor();
-
+            DisplayRoundSeparationBar();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(player1.name);
             Console.ResetColor();
@@ -57,18 +54,18 @@ namespace RockPaperScissors
             switch (winResult)
             {
                 case 0:
-                    Console.WriteLine("   DRAW!");
+                    Console.WriteLine("   [DRAW!]");
                     CheckGameWinner();
                     break;
                 case 1:
                 case 3:
-                    Console.WriteLine("   " + player1.name + " wins this round!");
+                    Console.WriteLine("   [" + player1.name + " wins this round!]");
                     player1.IncrementScore();
                     CheckGameWinner();
                     break;
                 case 2:
                 case 4:
-                    Console.WriteLine("   " + player2.name + " wins this round!");
+                    Console.WriteLine("   [" + player2.name + " wins this round!]");
                     player2.IncrementScore();
                     CheckGameWinner();
                     break;
@@ -101,7 +98,7 @@ namespace RockPaperScissors
 
         public void DisplayWinner(string winner)
         {
-            Console.WriteLine("========================================================");
+            DisplayRoundSeparationBar();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(winner + " WINS THE GAME!");
             Console.ResetColor();
@@ -159,9 +156,27 @@ namespace RockPaperScissors
         public void GetPlayerNames()
         {
             Console.WriteLine("Player 1 choose a name:");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             player1.GetPlayerName();
+            Console.ResetColor();
             Console.WriteLine("Player 2 choose a name:");
+            Console.ForegroundColor = ConsoleColor.Green;
             player2.GetPlayerName();
+            Console.ResetColor();
+        }
+
+        public void DisplayRoundSeparationBar()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            for (int i = 0; i < 35; i++)
+            {
+                Console.Write("=");
+                if (i == 34)
+                {
+                    Console.WriteLine("=");
+                }
+            }
+            Console.ResetColor();
         }
     }
 }

@@ -25,13 +25,13 @@ namespace RockPaperScissors
 
         public virtual void GetPlayerName()
         {
-            string userInput = Console.ReadLine();
+            string userInput = Console.ReadLine().Trim();
             name = userInput;
         }
 
         public virtual string GetPlayerChoice()
         {
-            string userInput = Console.ReadLine();
+            string userInput = Console.ReadLine().ToLower().Trim();
             if (choices.Contains(userInput))
             {
                 return userInput;

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    class PlayerHuman
+    class Player
     {
         public string name;
         public int score;
 
-        public PlayerHuman()
+        public Player()
         {
             name = "";
             score = 0;
@@ -22,9 +22,16 @@ namespace RockPaperScissors
             score++;
         }
 
-        public void PlayerChoice()
+        public virtual void GetPlayerName()
         {
-            
+            string userInput = Console.ReadLine();
+            name = userInput;
+        }
+
+        public virtual string GetPlayerChoice()
+        {
+            string userInput = Console.ReadLine();
+            return userInput;
         }
     }
 }

@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    class PlayerVAI
+    class Rules
     {
-        public PlayerVAI()
+        public Rules()
         {
-
+            
         }
 
-        public void StartGame()
+        public void DisplayRules()
         {
-
+            Console.WriteLine("RULES:");
+            Console.WriteLine("--Coming Soon--");
         }
     }
 }

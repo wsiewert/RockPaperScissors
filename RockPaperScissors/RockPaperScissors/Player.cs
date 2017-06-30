@@ -10,6 +10,7 @@ namespace RockPaperScissors
     {
         public string name;
         public int score;
+        public List<string> choices = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
 
         public Player()
         {
@@ -31,7 +32,12 @@ namespace RockPaperScissors
         public virtual string GetPlayerChoice()
         {
             string userInput = Console.ReadLine();
-            return userInput;
+            if (choices.Contains(userInput))
+            {
+                return userInput;
+            }
+            Console.WriteLine("--NOT A COMMAND!--");
+            return GetPlayerChoice();
         }
     }
 }

@@ -74,11 +74,13 @@ namespace RockPaperScissors
 
         public void CheckGameWinner()
         {
-            if (player1.score == 2 || player2.score == 2)
+            if (player1.score == 2)
             {
-                Console.WriteLine("WIN GAME");
-                WinGame();
-                //display winnner and ask to play again.
+                DisplayWinner(player1.name);
+            }
+            else if(player2.score == 2)
+            {
+                DisplayWinner(player2.name);
             }
             else
             {
@@ -86,9 +88,27 @@ namespace RockPaperScissors
             }
         }
 
-        public void WinGame()
+        public void DisplayWinner(string winner)
         {
-            //do something to win the game.
+            Console.WriteLine(winner + " WINS THE GAME!");
+            AskPlayAgain();
+        }
+
+        public void AskPlayAgain()
+        {
+            Console.WriteLine("Would you like to play again?");
+            Console.WriteLine("'yes' or 'no'");
+            string userInput = Console.ReadLine().ToLower().Trim();
+            switch (userInput)
+            {
+                case "yes":
+                    StartGame();
+                    break;
+                case "no":
+                    break;
+                default:
+                    break;
+            }
         }
 
         public string GetGameType()

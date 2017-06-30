@@ -9,7 +9,6 @@ namespace RockPaperScissors
     class AI : Player
     {
         List<string> computerNames = new List<string>() {"Online", "Offline", "Terminator", "Gerald", "ORIGIN MASTER", "You Will Lose", "Loading..."};
-        List<string> choices = new List<string>() {"rock","paper","scissors","lizard","spock"};
         string computerName = "GENERIC COMPUTER NAME";
 
         public AI()

@@ -28,12 +28,23 @@ namespace RockPaperScissors
 
         public void PlayRound()
         {
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("========================================================");
-            Console.WriteLine(player1.name + " Choose your hand:");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(player1.name);
+            Console.ResetColor();
+            Console.WriteLine(" choose your hand");
             string player1Choice = player1.GetPlayerChoice();
-            Console.WriteLine(player2.name + " Choose your hand:");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(player2.name);
+            Console.ResetColor();
+            Console.WriteLine(" choose your hand");
             string player2Choice = player2.GetPlayerChoice();
-            CompareHands(player1Choice,player2Choice);
+
+            CompareHands(player1Choice, player2Choice);
         }
 
         public void CompareHands(string player1Choice, string player2Choice)
@@ -46,18 +57,18 @@ namespace RockPaperScissors
             switch (winResult)
             {
                 case 0:
-                    Console.WriteLine("DRAW!");
+                    Console.WriteLine("   DRAW!");
                     CheckGameWinner();
                     break;
                 case 1:
                 case 3:
-                    Console.WriteLine(player1.name + " wins this round!");
+                    Console.WriteLine("   " + player1.name + " wins this round!");
                     player1.IncrementScore();
                     CheckGameWinner();
                     break;
                 case 2:
                 case 4:
-                    Console.WriteLine(player2.name + " wins this round!");
+                    Console.WriteLine("   " + player2.name + " wins this round!");
                     player2.IncrementScore();
                     CheckGameWinner();
                     break;
@@ -94,10 +105,10 @@ namespace RockPaperScissors
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(winner + " WINS THE GAME!");
             Console.ResetColor();
-            AskPlayAgain();
+            AskToPlayAgain();
         }
 
-        public void AskPlayAgain()
+        public void AskToPlayAgain()
         {
             Console.WriteLine("Would you like to play again?");
             Console.WriteLine("'yes' or 'no'");

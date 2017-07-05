@@ -103,10 +103,10 @@ namespace RockPaperScissors
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(winner + " WINS THE GAME!");
             Console.ResetColor();
-            AskToPlayAgain();
+            DisplayPlayAgain();
         }
 
-        public void AskToPlayAgain()
+        public void DisplayPlayAgain()
         {
             Console.WriteLine("Would you like to play again?");
             Console.WriteLine("'yes' or 'no'");
@@ -122,7 +122,7 @@ namespace RockPaperScissors
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("--NOT A COMMAND--");
                     Console.ResetColor();
-                    AskToPlayAgain();
+                    DisplayPlayAgain();
                     break;
             }
         }

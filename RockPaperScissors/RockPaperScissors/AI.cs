@@ -33,7 +33,7 @@ namespace RockPaperScissors
             int randomIndex;
             string result;
             Random randomNumber = new Random();
-            randomIndex = randomNumber.Next(0, (list.Count - 1));
+            randomIndex = randomNumber.Next(0, (list.Count));
             result = list[randomIndex];
             return result;
         }

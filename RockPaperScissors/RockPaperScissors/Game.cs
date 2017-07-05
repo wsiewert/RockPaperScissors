@@ -118,6 +118,10 @@ namespace RockPaperScissors
                 case "no":
                     break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("--NOT A COMMAND--");
+                    Console.ResetColor();
+                    AskToPlayAgain();
                     break;
             }
         }

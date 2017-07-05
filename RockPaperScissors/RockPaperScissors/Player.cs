@@ -26,7 +26,14 @@ namespace RockPaperScissors
         public virtual void GetPlayerName()
         {
             string userInput = Console.ReadLine().Trim();
-            name = userInput;
+            if (userInput == "")
+            {
+                name = "DEFAULT_USER_NAME";
+            }
+            else
+            {
+                name = userInput;
+            }
         }
 
         public virtual string GetPlayerChoice()

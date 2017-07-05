@@ -29,6 +29,7 @@ namespace RockPaperScissors
         public void PlayRound()
         {
             DisplayRoundSeparationBar();
+
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(player1.name);
             Console.ResetColor();

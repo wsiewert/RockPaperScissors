@@ -134,14 +134,17 @@ namespace RockPaperScissors
             Console.WriteLine("'2' - Human vs Human");
             string userInput = Console.ReadLine();
 
-            if (userInput == "1" || userInput == "2")
+            switch (userInput)
             {
-                return userInput;
+                case "1":
+                case "2":
+                    return userInput;
+                default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("--NOT A COMMAND--");
+                    Console.ResetColor();
+                    return GetGameType();
             }
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("--NOT A COMMAND--");
-            Console.ResetColor();
-            return GetGameType();
         }
 
         public void GetPlayerType(string gameType)

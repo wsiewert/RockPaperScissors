@@ -31,13 +31,13 @@ namespace RockPaperScissors
             DisplayRoundSeparationBar();
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write(player1.name);
+            Console.Write(player1.GetName());
             Console.ResetColor();
             Console.WriteLine(" choose your hand");
             string player1Choice = player1.GetPlayerChoice();
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(player2.name);
+            Console.Write(player2.GetName());
             Console.ResetColor();
             Console.WriteLine(" choose your hand");
             string player2Choice = player2.GetPlayerChoice();
@@ -60,13 +60,13 @@ namespace RockPaperScissors
                     break;
                 case 1:
                 case 3:
-                    Console.WriteLine("   [" + player1.name + " wins this round!]");
+                    Console.WriteLine("   [" + player1.GetName() + " wins this round!]");
                     player1.IncrementScore();
                     CheckGameWinner();
                     break;
                 case 2:
                 case 4:
-                    Console.WriteLine("   [" + player2.name + " wins this round!]");
+                    Console.WriteLine("   [" + player2.GetName() + " wins this round!]");
                     player2.IncrementScore();
                     CheckGameWinner();
                     break;
@@ -83,13 +83,13 @@ namespace RockPaperScissors
 
         public void CheckGameWinner()
         {
-            if (player1.score == 2)
+            if (player1.GetScore() == 2)
             {
-                DisplayWinner(player1.name);
+                DisplayWinner(player1.GetName());
             }
-            else if(player2.score == 2)
+            else if(player2.GetScore() == 2)
             {
-                DisplayWinner(player2.name);
+                DisplayWinner(player2.GetName());
             }
             else
             {

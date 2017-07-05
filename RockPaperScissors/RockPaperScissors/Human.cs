@@ -12,5 +12,18 @@ namespace RockPaperScissors
         {
             
         }
+
+        public override void GetPlayerName()
+        {
+            string userInput = Console.ReadLine().Trim();
+            if (userInput == "")
+            {
+                name = "DEFAULT_USER_NAME";
+            }
+            else
+            {
+                name = userInput;
+            }
+        }
     }
 }
